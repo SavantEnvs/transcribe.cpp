@@ -1,0 +1,11 @@
+project: savantenvs/transcribe.cpp
+target: fuzz-tokenize
+
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_tokenize
+    libfuzzer: true
+    timeout: 10
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-tokenize/testsuite

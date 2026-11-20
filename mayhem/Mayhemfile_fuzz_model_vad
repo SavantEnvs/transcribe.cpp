@@ -1,0 +1,11 @@
+project: savantenvs/transcribe.cpp
+target: fuzz-model-vad
+
+cmds:
+  - cmd: /mayhem/build-fuzz/bin/fuzz_model_vad
+    libfuzzer: true
+    timeout: 10
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-model-vad/testsuite
